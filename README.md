@@ -67,7 +67,9 @@ intuit-crash-course/
 
 ## Documentation
 
-Documentation is built with [mdbook](https://rust-lang.github.io/mdBook/). To view:
+**Live docs**: [https://driedyellowpeach.github.io/intuit-crash-course/](https://driedyellowpeach.github.io/intuit-crash-course/)
+
+To view locally:
 
 ```bash
 cd doc && mdbook serve --open
