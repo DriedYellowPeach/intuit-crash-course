@@ -6,7 +6,7 @@ A personal project to get hands-on with the tech stack used by the Intuit TurboT
 
 | Layer       | Technology              |
 |-------------|-------------------------|
-| Backend     | Java 21, Spring Boot    |
+| Backend     | Java 25, Spring Boot    |
 | Frontend    | React                   |
 | Database    | PostgreSQL              |
 | Cache       | Redis                   |
@@ -19,7 +19,7 @@ A personal project to get hands-on with the tech stack used by the Intuit TurboT
 
 ```
 intuit-crash-course/
-  backend/          # Spring Boot application (Java 21, Maven)
+  backend/          # Spring Boot application (Java 25, Maven)
   frontend/         # React application
   k8s/              # Kubernetes manifests
   doc/              # mdbook documentation
@@ -30,7 +30,7 @@ intuit-crash-course/
 
 ### Phase 1 - Foundation
 
-- [ ] Initialize Spring Boot project with Java 21 and Maven
+- [ ] Initialize Spring Boot project with Java 25 and Maven
 - [ ] Initialize React frontend with Vite
 - [ ] Set up PostgreSQL schema for tax returns
 - [ ] Set up Redis for session/caching

@@ -2,7 +2,7 @@
 
 ## Overview
 
-The backend is a Spring Boot application using Java 21 and Maven. It provides REST APIs for tax return management and filing orchestration.
+The backend is a Spring Boot application using Java 25 and Maven. It provides REST APIs for tax return management and filing orchestration.
 
 ## Project Layout
 

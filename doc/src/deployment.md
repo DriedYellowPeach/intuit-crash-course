@@ -9,7 +9,7 @@ The application is containerized with Docker and deployed to Kubernetes. This mi
 ### Backend
 
 ```dockerfile
-FROM eclipse-temurin:21-jre-alpine
+FROM eclipse-temurin:25-jre-alpine
 WORKDIR /app
 COPY target/*.jar app.jar
 EXPOSE 8080

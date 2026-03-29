@@ -2,26 +2,26 @@
 
 ## Prerequisites
 
-| Tool       | Version  | Purpose                        |
-|------------|----------|--------------------------------|
-| Java (JDK) | 21+     | Backend runtime                |
-| Maven      | 3.9+    | Build and dependency management|
-| Node.js    | 20+     | Frontend runtime               |
-| npm/yarn   | latest  | Frontend package management    |
-| Docker     | 24+     | Containerization               |
-| kubectl    | 1.28+   | Kubernetes CLI                 |
-| minikube   | latest  | Local Kubernetes cluster       |
-| PostgreSQL | 16+     | Database                       |
-| Redis      | 7+      | Cache                          |
-| mdbook     | latest  | Documentation                  |
+| Tool       | Version | Purpose                         |
+| ---------- | ------- | ------------------------------- |
+| Java (JDK) | 25+     | Backend runtime                 |
+| Maven      | 3.9+    | Build and dependency management |
+| Node.js    | 20+     | Frontend runtime                |
+| npm/yarn   | latest  | Frontend package management     |
+| Docker     | 24+     | Containerization                |
+| kubectl    | 1.28+   | Kubernetes CLI                  |
+| minikube   | latest  | Local Kubernetes cluster        |
+| PostgreSQL | 16+     | Database                        |
+| Redis      | 7+      | Cache                           |
+| mdbook     | latest  | Documentation                   |
 
 ## Installation
 
-### Java 21
+### Java 25
 
 ```bash
 # Arch Linux
-sudo pacman -S jdk21-openjdk
+sudo pacman -S jdk25-openjdk
 
 # Verify
 java --version
@@ -58,27 +58,30 @@ sudo usermod -aG docker $USER
 # Log out and back in for group change to take effect
 ```
 
-### PostgreSQL
+### PostgreSQL & Redis (via Docker)
+
+No local installation needed. Run them as containers:
 
 ```bash
-# Arch Linux
-sudo pacman -S postgresql
+# PostgreSQL
+docker run -d --name postgres \
+  -e POSTGRES_DB=intuit_crash_course \
+  -e POSTGRES_USER=dev \
+  -e POSTGRES_PASSWORD=dev \
+  -p 5432:5432 \
+  postgres:16
 
-# Initialize and start
-sudo -u postgres initdb -D /var/lib/postgres/data
-sudo systemctl enable --now postgresql
-
-# Create database
-sudo -u postgres createuser --interactive  # create your user
-sudo -u postgres createdb intuit_crash_course
+# Redis
+docker run -d --name redis \
+  -p 6379:6379 \
+  redis:7
 ```
 
-### Redis
+To stop/start later:
 
 ```bash
-# Arch Linux
-sudo pacman -S redis
-sudo systemctl enable --now redis
+docker stop postgres redis
+docker start postgres redis
 ```
 
 ### Kubernetes (minikube)
@@ -124,7 +127,7 @@ mdbook serve --open
 ### IntelliJ IDEA (recommended for Java/Spring Boot)
 
 - Import as Maven project
-- Set Project SDK to Java 21
+- Set Project SDK to Java 25
 - Install Spring Boot plugin
 
 ### VS Code (for React frontend)

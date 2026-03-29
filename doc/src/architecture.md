@@ -12,7 +12,7 @@
                                   |
                          +--------v---------+
                          |  Spring Boot API |
-                         |    (Java 21)     |
+                         |    (Java 25)     |
                          +--+----------+----+
                             |          |
                   +---------+          +----------+
@@ -27,7 +27,7 @@
 
 ### Backend (Spring Boot)
 
-The backend is a REST API built with Spring Boot and Java 21. It is responsible for:
+The backend is a REST API built with Spring Boot and Java 25. It is responsible for:
 
 - Managing tax return data (CRUD operations)
 - Orchestrating the filing workflow (save, validate, submit)
